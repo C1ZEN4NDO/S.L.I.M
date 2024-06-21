@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
-  background-image: url('../images/abstract_dark_low_poly_background.jpg'); 
+  background-image: url('../assets/images/abstract_dark_low_poly_background.jpg'); 
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
@@ -48,6 +48,10 @@ body {
   margin: 0 auto;
   padding-right: 5px;
   margin-top: 78px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
 }
 
 .a {

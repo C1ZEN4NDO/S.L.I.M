@@ -27,6 +27,7 @@ body {
   font-weight: bold;
   font-size: x-large;
   text-align: center;
+  margin: 10%;
 }
 
 .form-container{
@@ -37,16 +38,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 350px;
-  width: 350px;
+  min-height: 100px;
+  width: 1500px;
   flex-direction: column;
   gap: 35px;
   background: #e3e3e3;
   border-left: 6px solid #ffc800;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
   margin: 0 auto;
-  padding-right: 25px;
-  margin-top: 58px;
+  padding-right: 5px;
+  margin-top: 78px;
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
@@ -56,10 +57,12 @@ body {
 .inputBox {
   position: relative;
   width: 250px;
+  height: 20px;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
-.inputBox input {
+.inputBox select {
   width: 100%;
   padding: 10px;
   outline: none;
@@ -71,14 +74,13 @@ body {
   border-bottom: 2px solid #000;
   transition: 0.1s;
   border-bottom-left-radius: 3px;
-  text-transform: uppercase;
 }
 
 .inputBox span {
   margin-top: 5px;
   position: absolute;
   left: 0;
-  transform: translateY(-45px);
+  transform: translateY(-2.5px);
   margin-left: 5px;
   padding: 10px;
   pointer-events: none;
@@ -96,19 +98,19 @@ body {
        user-select: none;
 }
 
-.inputBox input:valid~span,
-.inputBox input:focus~span {
-  transform: translateX(170px) translateY(-60px);
+.inputBox select:valid~span,
+.inputBox select:focus~span {
+  transform: translateX(140px) translateY(-18px);
   font-size: 0.8em;
   padding: 5px 10px;
-  background-color: #ffc800;
+  background: #ffc800;
   letter-spacing: 0.2em;
   color: #000;
   border: 2px;
 }
 
-.inputBox input:valid,
-.inputBox input:focus {
+.inputBox select:valid,
+.inputBox select:focus {
   border: 2px solid #000;
   border-radius: 3px;
 }
@@ -118,25 +120,24 @@ body {
   flex-basis: 30%;
 }
 
-div.botao {
-  margin: 0 auto;
-}
-
-.cadastrar {
+.selbtn {
   height: 45px;
   width: 110px;
   text-align: center;
   cursor: pointer;
   border: none;
+  background-color: transparent;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 2px;
   color: black;
   font-weight: bold;
-  background-color: #ffc800;
+  background: #ffc800;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
   transition: all 0.2s ease-in-out;
-  margin-left: 20px;
+  margin-left: 100px;
+  margin-top: 15%;
+  margin-bottom: 10%;
   line-height: 45px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -144,7 +145,7 @@ div.botao {
           user-select: none;
 }
 
-.cadastrar:hover {
+.selbtn:hover {
   background-color: rgb(0, 0, 0);
   color: white;
 }

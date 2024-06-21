@@ -7,9 +7,9 @@
   <title>Cadastro de Cliente e Caso</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/x-icon" href="../images/favicon_io/favicon.ico">
-  <link rel="stylesheet" href="../css/menu.css">
-  <link rel="stylesheet" href="../css/index.css">
+  <link rel="icon" type="image/x-icon" href="./assets/images/favicon_io/favicon.ico">
+  <link rel="stylesheet" href="./css/menu.css">
+  <link rel="stylesheet" href="./css/index.css">
 
 </head>
 
@@ -30,7 +30,7 @@
             <div id="sysname">S.L.I.M</div>
           </li>
           <li><a class="active-nav" href="#" title="Cadastrar Cliente">Cadastrar Cliente</a></li>
-          <li><a href="../index_sec/index.php" title="Cadastrar Ativo">Cadastrar Ativo</a></li>
+          <li><a href="../src/pages/cadastrar_ativo.php" title="Cadastrar Ativo">Cadastrar Ativo</a></li>
           <li><a href="#" title="Consultar Ativo">Consultar Ativo</a></li>
           <li><a href="#" title="Inserir Tabela">Inserir Tabela</a></li>
         </ul>
@@ -51,7 +51,7 @@
     ?>
   </div>
 
-  <form action="inserir_dados.php" method="post">
+  <form action="../src/includes/inserir_dados.php" method="post">
     <div class="form-container">
       <div class="form">
         <a class="heading">Cadastrar cliente e caso</a>
@@ -76,7 +76,6 @@
   </form>
 
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-  <script src="../js/menu.js"></script>
 
 </body>
 

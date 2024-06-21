@@ -1,5 +1,5 @@
 <?php
-require_once '../conexao.php';
+require_once '../config/conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,9 +11,9 @@ require_once '../conexao.php';
 	<title>Cadastro de Cliente e Caso</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" type="image/x-icon" href="../images/favicon_io/favicon.ico">
-	<link rel="stylesheet" href="../css/menu.css">
-	<link rel="stylesheet" href="../css/index_sec.css">
+	<link rel="icon" type="image/x-icon" href="../../images/favicon_io/favicon.ico">
+	<link rel="stylesheet" href="../../public/css/menu.css">
+	<link rel="stylesheet" href="../../public/css/cadastrar_ativo.css">
 
 </head>
 
@@ -33,7 +33,7 @@ require_once '../conexao.php';
 						</div>
 						<div id="sysname">S.L.I.M</div>
 					</li>
-					<li><a href="../index_pri/index.php" title="Cadastrar Cliente">Cadastrar Cliente</a></li>
+					<li><a href="../../public/index.php" title="Cadastrar Cliente">Cadastrar Cliente</a></li>
 					<li><a class="active-nav" href="#" title="Cadastrar Ativo">Cadastrar Ativo</a></li>
 					<li><a href="#" title="Consultar Ativo">Consultar Ativo</a></li>
 					<li><a href="#" title="Inserir Tabela">Inserir Tabela</a></li>

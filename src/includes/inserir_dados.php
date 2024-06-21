@@ -1,5 +1,5 @@
 <?php
-require_once '../conexao.php';
+require_once '../config/conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,10 +27,10 @@ require_once '../conexao.php';
 
                     // Agora você pode prosseguir com o processamento dos dados
                 } else {
-                    header('Location: ../index_pri/?mensagem=Campos obrigatórios não foram preenchidos.');
+                    header('Location: ../../public/index.php?mensagem=Campos obrigatórios não foram preenchidos.');
                 }
             } else {
-                header('Location: ../index_pri/?mensagem=O cadastro não foi efetuado.');
+                header('Location: ../../public/index.php?mensagem=O cadastro não foi efetuado.');
             }
 
             // Recebe os dados do formulário
@@ -52,13 +52,13 @@ require_once '../conexao.php';
 
                 if ($resultadoCaso->num_rows > 0) {
                     // O caso já existe, apenas mostre a mensagem
-                    header('Location: ../index_pri/?mensagem=O caso já está cadastrado.');
+                    header('Location: ../../public/index.php?mensagem=O caso já está cadastrado.');
                 } else {
                     // O caso não existe, insere um novo caso
                     $sqlInserirCaso = "INSERT INTO casos (ClienteID, NomeCaso) VALUES ($clienteID, '$caso_nome')";
                     if ($conexao->query($sqlInserirCaso) === TRUE) {
                         // Redireciona para a página anterior com mensagem
-                        header('Location: ../index_sec/?mensagem=Caso inseridos com sucesso!');
+                        header('Location: ../pages/index.php?mensagem=Caso inseridos com sucesso!');
                         exit;
                     } else {
                         echo "Erro ao inserir o caso: " . $conexao->error;
@@ -73,7 +73,7 @@ require_once '../conexao.php';
                     $sqlInserirCaso = "INSERT INTO casos (ClienteID, NomeCaso) VALUES ($clienteID, '$caso_nome')";
                     if ($conexao->query($sqlInserirCaso) === TRUE) {
                         // Redireciona para o index secundário
-                        header('Location: ../index_sec/?mensagem=Cliente e caso inseridos com sucesso!');
+                        header('Location: ../pages/index.php?mensagem=Cliente e caso inseridos com sucesso!');
                         exit;
                     } else {
                         echo "Erro ao inserir o caso: " . $conexao->error;
