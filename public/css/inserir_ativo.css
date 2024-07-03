@@ -19,6 +19,10 @@ body {
   margin: 0 auto;
 }
 
+div .divheading{
+  width: 1500px;
+}
+
 .heading {
   color: #000;
   text-transform: uppercase;
@@ -27,7 +31,7 @@ body {
   font-weight: bold;
   font-size: x-large;
   text-align: center;
-  margin: 10%;
+  margin-top: 5%;
 }
 
 .form-container{
@@ -40,79 +44,18 @@ body {
   align-items: center;
   min-height: 100px;
   width: 1500px;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 35px;
   background: #e3e3e3;
-  border-left: 6px solid #ffc800;
+  border-left: 3px solid #ffc800;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
   margin: 0 auto;
   padding-right: 5px;
-  margin-top: 78px;
+  margin-top: -3%;
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
-}
-
-.inputBox {
-  position: relative;
-  width: 250px;
-  height: 20px;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-.inputBox select {
-  width: 100%;
-  padding: 10px;
-  outline: none;
-  border: none;
-  color: #000;
-  font-size: 1em;
-  background: transparent;
-  border-left: 2px solid #000;
-  border-bottom: 2px solid #000;
-  transition: 0.1s;
-  border-bottom-left-radius: 3px;
-}
-
-.inputBox span {
-  margin-top: 5px;
-  position: absolute;
-  left: 0;
-  transform: translateY(-2.5px);
-  margin-left: 5px;
-  padding: 10px;
-  pointer-events: none;
-  font-size: 12px;
-  color: #000;
-  font-weight:600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  border-radius: 3px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
-}
-
-.inputBox select:valid~span,
-.inputBox select:focus~span {
-  transform: translateX(140px) translateY(-18px);
-  font-size: 0.8em;
-  padding: 5px 10px;
-  background: #ffc800;
-  letter-spacing: 0.2em;
-  color: #000;
-  border: 2px;
-}
-
-.inputBox select:valid,
-.inputBox select:focus {
-  border: 2px solid #000;
-  border-radius: 3px;
 }
 
 .form-container .form .button-container .cad-button-container {

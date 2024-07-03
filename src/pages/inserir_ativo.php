@@ -1,87 +1,117 @@
+
 <?php
 require_once '../config/conexao.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br" class="no-js">
+<html lang="pt-br">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Cadastrar Ativo</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cadastrar Ativo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" type="image/x-icon" href="../../images/favicon_io/favicon.ico">
-	<link rel="stylesheet" href="../../public/css/menu.css">
-	<link rel="stylesheet" href="../../public/css/inserir_ativo.css">
-
+    <link rel="icon" type="image/x-icon" href="../../images/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="../../public/css/menu.css">
+    <link rel="stylesheet" href="../../public/css/inserir_ativo.css">
+    <link rel="stylesheet" href="../../public/css/inserir_ativo_input.css">
 </head>
 
 <body>
-<section id="menu-section">
-		<div id="menu-container">
-			<nav class="menu-sublinhado">
-				<ul>
-					<li>
-						<div class="animation">
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
-						<div id="sysname">S.L.I.M</div>
-					</li>
-					<li><a href="../../public/index.php" title="Cadastrar Cliente">Cadastrar Cliente</a></li>
-					<li><a class="active-nav" href="#" title="Cadastrar Ativo">Cadastrar Ativo</a></li>
-					<li><a href="#" title="Consultar Ativo">Consultar Ativo</a></li>
-					<li><a href="#" title="Inserir Tabela">Inserir Tabela</a></li>
-				</ul>
-			</nav>
-		</div>
-	</section>
+    <section id="menu-section">
+        <div id="menu-container">
+            <nav class="menu-sublinhado">
+                <ul>
+                    <li>
+                        <div class="animation">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div id="sysname">S.L.I.M</div>
+                    </li>
+                    <li><a href="../../public/index.php" title="Cadastrar Cliente">Cadastrar Cliente</a></li>
+                    <li><a class="active-nav" href="#" title="Cadastrar Ativo">Cadastrar Ativo</a></li>
+                    <li><a href="#" title="Consultar Ativo">Consultar Ativo</a></li>
+                    <li><a href="#" title="Inserir Tabela">Inserir Tabela</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
 
-	<div class="form-container">
-		<div class="form">
-
-
-                    <?php
-                    if ($conexao->connect_error) {
-                        die("Conexão falhou: " . $conexao->connect_error);
-                    }
-
-                    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['caso_id'])) {
-                        $caso_id = $_GET['caso_id'];
-
-                        // Consulta para buscar informações do caso
-                        $sql = "SELECT * FROM Casos WHERE ID = $caso_id";
-                        $result_caso = $conexao->query($sql);
-
-                        if ($result_caso->num_rows > 0) {
-                            $row_caso = $result_caso->fetch_assoc();
-                            $nome_caso = $row_caso['NomeCaso'];
-                            $cliente_id = $row_caso['ClienteID'];
-
-                            // Formulário para inserir informações em Ativos
-                            echo "<a class='heading'>Inserir informações no Caso $nome_caso</a>";
-
-                            echo "<form class='form' action='processar_insercao.php' method='POST'>";
-
-                            echo "<input type='hidden' name='caso_id' value='$caso_id'>";
-                            echo "<input type='hidden' name='cliente_id' value='$cliente_id'>";
-
-                            echo "<div class='input-group'>
-                                <label for='alvopesquisado'> Alvo Pesquisado:</label> 
-                                    <input id='alvopesquisado' class='alvopesquisado' type='text' name='alvopesquisado' autocomplete='off' required>";
-
-                            echo "<div class='input-box'>
-                <label for='partealvo'>Parte Alvo:</label>
-                    <input id='partealvo' class='partealvo' type='text' name='partealvo' autocomplete='off' required>
+    <div class="form-container">
+        <div class="form">
 
 
-                <select id='selestrategia' class='selestrategia' name='estrategia' data-width='76' data-value='' >
-                <option value=''>Estratégia</option>
+            <?php
+            if ($conexao->connect_error) {
+                die("Conexão falhou: " . $conexao->connect_error);
+            }
+
+            if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['caso_id'])) {
+                $caso_id = $_GET['caso_id'];
+
+                // Consulta para buscar informações do caso
+                $sql = "SELECT * FROM Casos WHERE ID = $caso_id";
+                $result_caso = $conexao->query($sql);
+
+                if ($result_caso->num_rows > 0) {
+                    $row_caso = $result_caso->fetch_assoc();
+                    $nome_caso = $row_caso['NomeCaso'];
+                    $cliente_id = $row_caso['ClienteID'];
+
+
+
+                    // Formulário para inserir informações em Ativos
+                    echo "<form class='form' action='processar_insercao.php' method='POST'>";
+
+
+
+                    echo "<input type='hidden' name='caso_id' value='$caso_id'>
+                        <input type='hidden' name='cliente_id' value='$cliente_id'>
+
+                    <div class='divheading'>
+                            <a class='heading'>Inserir informações no Caso $nome_caso</a>
+                    </div>
+
+                    <br>
+                    <div class='inputBox alvopesquisado'>
+                                <input id='alvopesquisado' class='alvopesquisado' type='text' name='alvopesquisado' autocomplete='off' required>
+                    <span class='alvopesquisado'>Alvo Pesquisado</span>
+                    </div>
+
+
+                    <div class='inputBox partealvo'>
+                    <select id='partealvo' class='partealvo' type='text' name='partealvo' autocomplete='off' required>
+                    <option value=''></option>
+                    <option value='Devedor'>Devedor</option>
+                    <option value='Aval/Fiador'>Aval/Fiador</option>
+                    <option value='Sócio'>Sócio</option>
+                    <option value='Ex-Sócio'>Ex-Sócio</option>
+                    <option value='Diretor'>Diretor</option>
+                    <option value='Familiar'>Familiar</option>
+                    <option value='Controlada/Grupo'>Controlada/Grupo</option>
+                    <option value='Suspeito'>Suspeito</option>
+                    <option value='Admnistrador'>Admnistrador</option>
+                    <option value='Conselho de Administração'>Conselho de Administração</option>
+                    <option value='Procurador'>Procurador</option>
+                    <option value='Sociedade Consorciada'>Sociedade Consorciada</option>
+                    <option value='Produtor Rural'>Produtor Rural</option>
+                    <option value='Presidente'>Presidente</option>
+                    <option value='Sócio Oculto'>Sócio Oculto</option>
+                    <option value='Outro'>Outro</option>
+                    </select>
+                    <span>Parte Alvo</span>
+                    </div>
+
+
+                    <div class='inputBox selestrategia'>
+                <select id='selestrategia' class='selestrategia' type='text' name='estrategia' autocomplete='off' >
+                <option value=''></option>
                 <option value='Penhora'>Penhora</option>
                 <option value='Arresto Cautelar'>Arresto Cautelar</option>
                 <option value='IDJP'>IDJP</option>
@@ -91,24 +121,25 @@ require_once '../config/conexao.php';
                 <option value='Penhora de Quotas'>Penhora de Quotas</option>
                 <option value='Desconsiderar'>Desconsiderar</option>
                 </select>
-                </div>";
+                    <span>Estratégia</span>
+                    </div>
 
-                            echo "<div class='input-box'>
-                <label for='proprietarioimovel'> Proprietário do Imovel: </label>
+                    <div class='inputBox proprietarioimovel'>
                     <input id='proprietarioimovel' class='proprietarioimovel' type='text' name='proprietarioimovel' autocomplete='off'>
-                    </div>";
+                    <span>proprietário do imóvel</span>
+                    </div>
 
-                            echo "<div class='input-box'>
-                <label for='docproprietario'> Documento do Proprietário: </label>
-                    <input id='docproprietario' class='docproprietario' type='text' name='docproprietario' minlength='14' maxLength='18' autocomplete='off'>
-                    </div>";
+                    <div class='inputBox docproprietario'> 
+                    <input id='docproprietario' class='docproprietario' type='text' name='docproprietario' minlength='14' maxLength='18' autocomplete='off' >
+                    <span>doc do proprietário</span>
+                    </div>
 
-                            echo "<div class='input-box2'>
-                <label for='porcentpropriedade'> % da Propriedade: </label>
-                    <input id='porcentpropriedade' class='porcentpropriedade' type='text' name='porcentpropriedade' maxLength='5 value='' onchange='calcularValorFração()'>
-                    </div>";
+                    <div class='inputBox porcpropriedade'> 
+                    <input id='porcentpropriedade' class='porcentpropriedade' type='text' name='porcentpropriedade' maxLength='5' value='' onchange='calcularValorFração()' required>
+                    <span> % imóvel</span>
+                    </div>
 
-                            echo "<div class='input-box2'>
+                <div class='input-box2'>
                 <select id='tipoativo' class='tipoativo' name='tipoativo' data-width='76' data-value='' >
                 <option value=''>Tipo Ativo</option>
                 <option value='Imóvel Urbano'>Imóvel Urbano</option>
@@ -116,7 +147,7 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                            echo "<div class='input-box2'>
+                    echo "<div class='input-box2'>
                 <select id='subtipoativo' class='subtipoativo' name='subtipoativo' data-width='76' data-value='' >
                 <option value=''>Subtipo do Ativo</option>
                 <option value='Apartamento Cobertura'>Apartamento Cobertura</option>
@@ -152,7 +183,7 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                            echo "<div class='input-box2'>
+                    echo "<div class='input-box2'>
                 <select id='tipologia' class='tipologia' name='tipologia' data-width='76' data-value='' >
                 <option value=''>Tipologia</option>
                 <option value='Terreno'>Terreno</option>
@@ -162,12 +193,12 @@ require_once '../config/conexao.php';
                 </div>";
 
 
-                            echo "<div class='input-box2'>
+                    echo "<div class='input-box2'>
                 <label for='matricula'> Matrícula: </label>
                     <input id='matricula' class='matricula' type='text' name='matricula' autocomplete='off' required>
                     </div>";
 
-                            echo "<div class='input-box2'>
+                    echo "<div class='input-box2'>
                 <select id='numcartorio' class='numcartorio' name='numcartorio' data-width='76' data-value='' required>
                 <option value=''>Número do Cartório</option>
                 <option value='01º CARTÓRIO'>01º CARTÓRIO</option>
@@ -193,22 +224,22 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                            echo "<div class='input-box'>
+                    echo "<div class='input-box'>
                 <label for='cidcartorio'> Cidade do Cartório: </label>
                     <input id=cidcartorio class='cidcartorio' type='text' name='cidcartorio' placeholder='Sem Assentuação' autocomplete='off' required>
                     </div>";
 
-                            echo "<div class='input-box'>
+                    echo "<div class='input-box'>
                 <label for='endereco'> Endereço: </label>
                     <input id='endereco' class='endereco'type='text' name='endereco' autocomplete='off'>
                     </div>";
 
-                            echo "<div class='input-box1'>
+                    echo "<div class='input-box1'>
                 <label for='cidade'> Cidade: </label>
                     <input id='cidade' class='cidade' type='text' name='cidade' autocomplete='off'>
                     </div>";
 
-                            echo "<div class='input-box1'>
+                    echo "<div class='input-box1'>
                 <select id='uf' class='uf' name='uf' data-width='76' data-value=''>
                 <option value=''>UF</option>
                 <option value='AC'>AC</option>
@@ -241,7 +272,7 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                            echo "<div class='input-box1'>
+                    echo "<div class='input-box1'>
                 <select  id='regiao' class='regiao' name='regiao' data-width='76' data-value='' >
                 <option value=''>Região</option>
                 <option value='Sul'>Sul</option>
@@ -252,7 +283,7 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                            echo "<div class='input-box2'>    
+                    echo "<div class='input-box2'>    
                 <select id='ham2' class='ham2' name='ham2' data-width='76' data-value='' >
                 <option value=''>Ha/M²</option>
                 <option value='Ha'>Ha</option>
@@ -260,32 +291,32 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                            echo "<div class='input-box2'>    
+                    echo "<div class='input-box2'>    
                 <label for='areaterreno'> Área Terreno: </label>
                     <input id='areaterreno' class='areaterreno' type='text' name='areaterreno' autocomplete='off'>
                     </div>";
 
-                            echo "<div class='input-box2'>   
+                    echo "<div class='input-box2'>   
             <label for='areaconstruida'> Área Construída: </label>
                 <input id='areaconstruida' class='areaconstruida' type='text' name='areaconstruida' autocomplete='off'>
                     </div>";
 
-                            echo "<div class='input-box'>  
+                    echo "<div class='input-box'>  
                 <label for='valormercado'> Valor Mercado: </label>
                     <input id='valormercado' class='valormercado' type='text' name='valormercado' onchange='calcularValorFração()'>
                     </div>";
 
-                            echo "<div class='input-box'>  
+                    echo "<div class='input-box'>  
                 <label for='valormercadofracao'> Valor Mercado (Fração %): </label>
                     <input id='valormercadofracao' class='valormercadofracao' type='text' name='valormercadofracao' >
                         </div>";
 
-                            echo "<div class='input-box'> 
+                    echo "<div class='input-box'> 
             <label for='origemvalor'> Origem do Valor: </label> 
                     <input id='origemvalor' class='origemvalor' type='text' name='origemvalor' autocomplete='off'>
                     </div>";
 
-                            echo "<div class='input-box'> 
+                    echo "<div class='input-box'> 
                 <select id='transacaorelevante' class='transacaorelevante' name='transacaorelevante' data-width='76' data-value='' >
                 <option value=''>Transação Relevante</option>
                 <option value='N/A'>N/A</option>
@@ -301,12 +332,12 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                            echo "<div class='input-box'>
+                    echo "<div class='input-box'>
                 <label for='datatransacaorelevante'> Data Trans. Relevante: </label>
                     <input id='datatransacaorelevante' class='datatransacaorelevante' type='text' name='datatransacaorelevante' autocomplete='off'>
                     </div>";
 
-                            echo "<div class='input-box'>
+                    echo "<div class='input-box'>
                 <select id='onustrabalhista' class='onustrabalhista' name='onustrabalhista' data-width='76' data-value='' >
                 <option value=''>Ônus Trabalhista</option>
                 <option value='Sim'>Sim</option>
@@ -314,19 +345,19 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                            echo "<div class='input-box'>  
+                    echo "<div class='input-box'>  
                 <label for='onustquantidade'> Quantidade: </label>
                     <input id='onustquantidade' class='onustquantidade' type='text' name='onustquantidade' autocomplete='off'>
                         </div>";
 
-                        echo "<div class='input-box'>  
+                    echo "<div class='input-box'>  
                         <label for='onustvalorhistorico'> Valor Histórico: </label>
                             <input id='onustvalorhistorico' class='onustvalorhistorico' type='text' name='onustvalorhistorico' autocomplete='off'>
                                 </div>";
 
 
 
-                            echo "<div class='input-box1'>
+                    echo "<div class='input-box1'>
                 <select id='onusfiscal' class='onusfiscal' name='onusfiscal' data-width='76' data-value='' >
                 <option value=''>Ônus Fiscal</option>
                 <option value='Sim'>Sim</option>
@@ -334,17 +365,17 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                echo "<div class='input-box'>  
+                    echo "<div class='input-box'>  
                 <label for='onusfquantidade'> Quantidade: </label>
                     <input id='onusfquantidade' class='onusfquantidade' type='text' name='onusfquantidade' autocomplete='off'>
                         </div>";
 
-                        echo "<div class='input-box'>  
+                    echo "<div class='input-box'>  
                         <label for='onusfvalorhistorico'> Valor Histórico: </label>
                             <input id='onusfvalorhistorico' class='onusfvalorhistorico' type='text' name='onusfvalorhistorico' autocomplete='off'>
                                 </div>";
 
-                            echo "<div class='input-box1'>
+                    echo "<div class='input-box1'>
                 <select id='onuscivel' class='onuscivel' name='onuscivel' data-width='76' data-value='' >
                 <option value=''>Ônus Cível</option>
                 <option value='Sim'>Sim</option>
@@ -352,17 +383,17 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                echo "<div class='input-box'>  
+                    echo "<div class='input-box'>  
                 <label for='onuscquantidade'> Quantidade: </label>
                     <input id='onuscquantidade' class='onuscquantidade' type='text' name='onuscquantidade' autocomplete='off'>
                         </div>";
 
-                        echo "<div class='input-box'>  
+                    echo "<div class='input-box'>  
                         <label for='onuscvalorhistorico'> Valor Histórico: </label>
                             <input id='onuscvalorhistorico' class='onuscvalorhistorico' type='text' name='onuscvalorhistorico' autocomplete='off'>
                                 </div>";
 
-                            echo "<div class='input-box'>
+                    echo "<div class='input-box'>
                 <select id='imovelgarantia' class='imovelgarantia' name='imovelgarantia' data-width='76' data-value='' >
                 <option value=''>Imóvel em Garantia</option>
                 <option value='Alienação Fiduciária'>Alienação Fiduciária</option>
@@ -372,7 +403,7 @@ require_once '../config/conexao.php';
                 </div>";
 
 
-                            echo "<div class='input-box'>
+                    echo "<div class='input-box'>
                 <select id='considerarnopreco' class='considerarnopreco' name='considerarnopreco' data-width='76' data-value='' >
                 <option value=''>Considerar no Preço?</option>
                 <option value='Sim'>Sim</option>
@@ -381,201 +412,231 @@ require_once '../config/conexao.php';
                 </select>
                 </div>";
 
-                            echo "<div class='input-box'>
+                    echo "<div class='input-box'>
                 <label for='comentarios'> Comentários: </label>
                 <textarea id='comentarios' class='comentarios' name='comentarios' rows='4' autocomplete='off' style='resize: none;'></textarea>
                 </div>";
 
-                            echo "<div class='input-box'>
+                    echo "<div class='input-box'>
                 <label for='situacaoonus'> Situação de ônus: </label>
                     <input id='situacaoonus' class='situacaoonus' type='text' name='situacaoonus' value='' readonly >
                     </div>";
 
-                            echo "<div class='input-box' style='display: none;'>
+                    echo "<div class='input-box' style='display: none;'>
                 <label for='textoconclusaolivres'> TEXTO CONCLUSÃO - LIVRES: </label>
                     <input id='textoconclusaolivres' class='textoconclusaolivres' type='text' name='textoconclusaolivres' value='' hidden>
                 </div>";
 
-                            echo "<div class='input-box'  style='display: none;'>
+                    echo "<div class='input-box'  style='display: none;'>
                 <label for='textoconclusaoonerados'> TEXTO CONCLUSÃO - ONERADOS: </label>
                     <input id='textoconclusaoonerados' class='textoconclusaoonerados' type='text' name='textoconclusaoonerados' hidden>
-                </div>
-            </div>";
+                </div>";
+            
 
-                            echo "<div id='botao' class='botao'><input class='cadbtn' type='submit' value='Inserir Ativo'></div>";
-                            echo "</form></div>";
-                        } else {
-                            header('Location: ../cad_sec/?mensagem=Caso não encontrado.');
-                        }
-                    } else {
-                        echo "Parâmetros ausentes.";
-                    }
+                    echo "<div id='botao' class='botao'><input class='cadbtn' type='submit' value='Inserir Ativo'></div>
+                    </form></div>
+                    </div>";
+                } else {
+                    header('Location: ../cad_sec/?mensagem=Caso não encontrado.');
+                }
+            } else {
+                echo "Parâmetros ausentes.";
+            }
 
-                    $conexao->close();
-                    ?>
-                </div>
-                </div>
+            $conexao->close();
+            ?>
+        </div>
+    </div>
 
-                <script>
-                    function calcularValorFração() {
-                        var valorP = document.getElementById("porcentpropriedade").value;
-                        var valorM = document.getElementById("valormercado").value;
+    <script>
+    function calcularValorFração() {
+        var valorP = document.getElementById("porcentpropriedade").value;
+        var valorM = document.getElementById("valormercado").value;
 
-                        // Remover pontos e vírgulas e converter para float
-                        var valorM2 = parseFloat(valorM.replace(/\./g, "").replace(",", "."));
-                        var valorP2 = parseFloat(valorP.replace(/\,/g, "."));
+        // Remover pontos e vírgulas e converter para float
+        var valorM2 = parseFloat(valorM.replace(/\./g, "").replace(",", "."));
+        var valorP2 = parseFloat(valorP.replace(/\,/g, "."));
 
-                        var resultado = valorM2 * valorP2 / 100;
-                        // Formatar o resultado
-                        var resultadoFormatado = formatNumber(resultado);
+        // Verificar se o valorP2 é maior que 100
+        if (valorP2 > 100) {
+            valorP2 = 100; // Limitar o valor a 100
+            document.getElementById("porcentpropriedade").value = valorP2; // Atualizar o valor no input
+        }
 
-                        // Inserir o resultado formatado no input e exibi-lo na página
-                        document.getElementById("valormercadofracao").value = resultadoFormatado;
-                        document.getElementById("resultado").innerHTML = "Resultado formatado: " + resultadoFormatado;
-                    }
+        // Arredondar para cima a porcentagem
+        var valorP2Arredondado = Math.ceil(valorP2);
 
-                    function formatNumber(number) {
-                        return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number);
-                    }
+        var resultado = valorM2 * valorP2Arredondado / 100;
+        // Formatar o resultado
+        var resultadoFormatado = formatNumber(resultado);
 
-                </script>
+        // Inserir o resultado formatado no input e exibi-lo na página
+        document.getElementById("valormercadofracao").value = resultadoFormatado;
+        document.getElementById("porcentpropriedade").value = valorP2Arredondado;
+    }
 
-
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        // Obter referências aos elementos do DOM
-                        const onusTrabalhista = document.getElementById('onustrabalhista');
-                        const onusFiscal = document.getElementById('onusfiscal');
-                        const onusCivel = document.getElementById('onuscivel');
-                        const imovelGarantia = document.getElementById('imovelgarantia');
-                        const considerarNoPreco = document.querySelector('.considerarnopreco');
-                        const situacaoonus = document.getElementById('situacaoonus');
-                        const textoconclusaolivres = document.getElementById('situacaoonus');
-
-                        // Adicionar um ouvinte de evento de alteração a todos os campos relevantes
-                        [onusTrabalhista, onusFiscal, onusCivel, imovelGarantia, considerarNoPreco].forEach(function (element) {
-                            element.addEventListener('change', atualizarSituacaoOnus);
-                        });
-
-                        // Função para atualizar o valor do campo situacaoonus
-                        function atualizarSituacaoOnus() {
-                            if (
-                                onusTrabalhista.value === 'Não' &&
-                                onusFiscal.value === 'Não' &&
-                                onusCivel.value === 'Não' &&
-                                imovelGarantia.value === 'Não' &&
-                                considerarNoPreco.value === 'Sim'
-                            ) {
-                                situacaoonus.value = 'Livre';
-                            } else if (considerarNoPreco.value === 'Não') {
-                                situacaoonus.value = '-';
-                            } else {
-                                situacaoonus.value = 'Onerado';
-                            }
-                        }
-                    });
-                </script>
+    function formatNumber(number) {
+        return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number);
+    }
+</script>
 
 
-                <script>
-                    // Adiciona um ouvinte de evento para cada campo de entrada
-                    document.querySelectorAll('input').forEach(function (element) {
-                        element.addEventListener('input', function () {
-                            // Converter o valor para maiúsculas
-                            this.value = this.value.toUpperCase();
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obter referências aos elementos do DOM
+            const onusTrabalhista = document.getElementById('onustrabalhista');
+            const onusFiscal = document.getElementById('onusfiscal');
+            const onusCivel = document.getElementById('onuscivel');
+            const imovelGarantia = document.getElementById('imovelgarantia');
+            const considerarNoPreco = document.querySelector('.considerarnopreco');
+            const situacaoonus = document.getElementById('situacaoonus');
+            const textoconclusaolivres = document.getElementById('situacaoonus');
 
-                            // Remover caracteres acentuados
-                            var valorSemAcentos = this.value.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            // Adicionar um ouvinte de evento de alteração a todos os campos relevantes
+            [onusTrabalhista, onusFiscal, onusCivel, imovelGarantia, considerarNoPreco].forEach(function (element) {
+                element.addEventListener('change', atualizarSituacaoOnus);
+            });
 
-                            // Verificar se houve mudança no valor após a remoção dos acentos
-                            if (this.value !== valorSemAcentos) {
-                                // Atualizar o valor do campo sem acentos
-                                this.value = valorSemAcentos;
-                            }
-                        });
-                    });
-                </script>
+            // Função para atualizar o valor do campo situacaoonus
+            function atualizarSituacaoOnus() {
+                if (
+                    onusTrabalhista.value === 'Não' &&
+                    onusFiscal.value === 'Não' &&
+                    onusCivel.value === 'Não' &&
+                    imovelGarantia.value === 'Não' &&
+                    considerarNoPreco.value === 'Sim'
+                ) {
+                    situacaoonus.value = 'Livre';
+                } else if (considerarNoPreco.value === 'Não') {
+                    situacaoonus.value = '-';
+                } else {
+                    situacaoonus.value = 'Onerado';
+                }
+            }
+        });
+    </script>
 
 
-                <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
-                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js'></script>
-                <script>$('.valormercado').mask('000.000.000.000.000,00', { reverse: true });</script>
-                <script>$('.areaterreno').mask('000.000.000.000.000,00', { reverse: true });</script>
-                <script>$('.areaconstruida').mask('000.000.000.000.000,00', { reverse: true });</script>
-                <script>$('.onustvalorhistorico').mask('000.000.000.000.000,00', { reverse: true });</script>
-                <script>$('.onusfvalorhistorico').mask('000.000.000.000.000,00', { reverse: true });</script>
-                <script>$('.onuscvalorhistorico').mask('000.000.000.000.000,00', { reverse: true });</script>
-                <script>$('.onustquantidade').mask('000000', { reverse: true });</script>
-                <script>$('.onusfquantidade').mask('000000', { reverse: true });</script>
-                <script>$('.onuscquantidade').mask('000000', { reverse: true });</script>
-                <script>$('.porcentpropriedade').mask('000,00', { reverse: true });</script>
-                <script>$('.datatransacaorelevante').mask('00/00/0000');</script>
+    <script>
+        // Adiciona um ouvinte de evento para cada campo de entrada
+        document.querySelectorAll('input').forEach(function (element) {
+            element.addEventListener('input', function () {
+                // Converter o valor para maiúsculas
+                this.value = this.value.toUpperCase();
 
-                <script>
-                    document.getElementById('docproprietario').addEventListener('input', function (e) {
-                        var value = e.target.value.replace(/\D/g, '');
+                // Remover caracteres acentuados
+                var valorSemAcentos = this.value.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-                        if (value.length === 11) {
-                            // CPF: 000.000.000-00
-                            value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-                        } else if (value.length === 14) {
-                            // CNPJ: 00.000.000/0000-00
-                            value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
-                        }
+                // Verificar se houve mudança no valor após a remoção dos acentos
+                if (this.value !== valorSemAcentos) {
+                    // Atualizar o valor do campo sem acentos
+                    this.value = valorSemAcentos;
+                }
+            });
+        });
+    </script>
 
-                        e.target.value = value;
-                    });
-                </script>
 
-                <script>
-                    //fromata areaconstruida e areaterreno   
-                    function formatAreaInput(inputId) {
-                        var input = document.getElementById(inputId);
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js'></script>
+    <script>$('.valormercado').mask('000.000.000.000.000,00', { reverse: true });</script>
+    <script>$('.areaterreno').mask('000.000.000.000.000,00', { reverse: true });</script>
+    <script>$('.areaconstruida').mask('000.000.000.000.000,00', { reverse: true });</script>
+    <script>$('.onustvalorhistorico').mask('000.000.000.000.000,00', { reverse: true });</script>
+    <script>$('.onusfvalorhistorico').mask('000.000.000.000.000,00', { reverse: true });</script>
+    <script>$('.onuscvalorhistorico').mask('000.000.000.000.000,00', { reverse: true });</script>
+    <script>$('.onustquantidade').mask('000000', { reverse: true });</script>
+    <script>$('.onusfquantidade').mask('000000', { reverse: true });</script>
+    <script>$('.onuscquantidade').mask('000000', { reverse: true });</script>
+    <script>$('.porcentpropriedade').mask('000,00', { reverse: true });</script>
+    <script>$('.datatransacaorelevante').mask('00/00/0000');</script>
 
-                        input.addEventListener('blur', function () {
-                            var value = parseFloat(input.value.replace(/[^\d.,]/g, '').replace(',', '.'));
-                            input.value = value.toLocaleString('pt-BR');
-                        })
-                    }
+    <script>
+        document.getElementById('docproprietario').addEventListener('input', function (e) {
+            var value = e.target.value.replace(/\D/g, '');
 
-                    formatAreaInput('porcentpropriedade');
-                </script>
+            if (value.length === 11) {
+                // CPF: 000.000.000-00
+                value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            } else if (value.length === 14) {
+                // CNPJ: 00.000.000/0000-00
+                value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+            }
 
-                <script src="../js/jquery.min.js"></script>
-                <script src="../js/jquery.easing.1.3.js"></script>
-                <script src="../js/bootstrap.min.js"></script>
-                <script src="../js/moment.js"></script>
-                <script src="../js/bootstrap-datetimepicker.min.js"></script>
-                <script src="../js/jquery.waypoints.min.js"></script>
-                <script src="../js/jquery.stellar.min.js"></script>
-                <script src="../js/jquery.flexslider-min.js"></script>
-                <script>
-                    $(function () {
-                        $('#date').datetimepicker();
-                    });
-                </script>
-                <script src="../js/main.js"></script>
+            e.target.value = value;
+        });
+    </script>
 
-                <script>
-                    document.getElementById('calcular').addEventListener('click', function () {
-                        calcular();
-                    });
+    <script>
+        //fromata areaconstruida e areaterreno   
+        function formatAreaInput(inputId) {
+            var input = document.getElementById(inputId);
 
-                    function formatNumber(input) {
-                        // Utilizei toFixed() para garantir que tenhamos duas casas decimais
-                        const numberString = input.toFixed(2).toString();
+            input.addEventListener('blur', function () {
+                var value = parseFloat(input.value.replace(/[^\d.,]/g, '').replace(',', '.'));
+                input.value = value.toLocaleString('pt-BR');
+            })
+        }
 
-                        const parts = numberString.split('.');
+        formatAreaInput('porcentpropriedade');
+    </script>
 
-                        // Adiciona ponto como separador de milhar
-                        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/moment.js"></script>
+    <script src="../js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <script src="../js/jquery.stellar.min.js"></script>
+    <script src="../js/jquery.flexslider-min.js"></script>
+    <script>
+        $(function () {
+            $('#date').datetimepicker();
+        });
+    </script>
+    <script src="../js/main.js"></script>
 
-                        // Limita a duas casas decimais sem arredondar
-                        parts[1] = parts[1] ? parts[1] : '00';
+    <script>
+        document.getElementById('calcular').addEventListener('click', function () {
+            calcular();
+        });
 
-                        return parts.join(',');
-                    }
-                </script>
+        function formatNumber(input) {
+            // Utilizei toFixed() para garantir que tenhamos duas casas decimais
+            const numberString = input.toFixed(2).toString();
+
+            const parts = numberString.split('.');
+
+            // Adiciona ponto como separador de milhar
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+            // Limita a duas casas decimais sem arredondar
+            parts[1] = parts[1] ? parts[1] : '00';
+
+            return parts.join(',');
+        }
+    </script>
+
+<script>
+  // Seleciona todos os inputs com a classe 'proprietarioimovel'
+  const inputs = document.querySelectorAll('.proprietarioimovel input');
+
+  // Para cada input, adiciona um event listener para verificar mudanças
+  inputs.forEach(input => {
+    input.addEventListener('input', function() {
+      const span = this.nextElementSibling; // Seleciona o próximo elemento (o span)
+
+      if (this.value.trim() !== '') {
+        span.classList.add('active'); // Adiciona a classe 'active' ao span se o campo não estiver vazio
+      } else {
+        span.classList.remove('active'); // Remove a classe 'active' se o campo estiver vazio
+      }
+    });
+  });
+</script>
+
+<script src="../../public/js/inserir_ativo_input.js"></script>
+
 
 </body>
 
