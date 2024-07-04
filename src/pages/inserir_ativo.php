@@ -235,16 +235,16 @@ require_once '../config/conexao.php';
                     <div class='inputBox endereco'>
                     <input id='endereco' class='endereco'type='text' name='endereco' autocomplete='off'>
                     <span>Endereço</span>
-                    </div>";
+                    </div>
 
-                    echo "<div class='input-box1'>
-                <label for='cidade'> Cidade: </label>
+                    <div class='inputBox cidade'>
                     <input id='cidade' class='cidade' type='text' name='cidade' autocomplete='off'>
-                    </div>";
+                    <span>Cidade</span>
+                    </div>
 
-                    echo "<div class='input-box1'>
+                <div class='inputBox uf'>
                 <select id='uf' class='uf' name='uf' data-width='76' data-value=''>
-                <option value=''>UF</option>
+                <option value=''></option>
                 <option value='AC'>AC</option>
                 <option value='AL'>AL</option>
                 <option value='AP'>AP</option>
@@ -273,50 +273,53 @@ require_once '../config/conexao.php';
                 <option value='SE'>SE</option>
                 <option value='TO'>TO</option>
                 </select>
-                </div>";
+                <span>UF</span>
+                </div>
 
-                    echo "<div class='input-box1'>
+                <div class='inputBox regiao'>
                 <select  id='regiao' class='regiao' name='regiao' data-width='76' data-value='' >
-                <option value=''>Região</option>
+                <option value=''></option>
                 <option value='Sul'>Sul</option>
                 <option value='Sudeste'>Sudeste</option>
                 <option value='Centro-oeste'>Centro-oeste</option>
                 <option value='Norte'>Norte</option>
                 <option value='Nordeste'>Nordeste</option>
                 </select>
-                </div>";
+                <span>Região</span>
+                </div>
 
-                    echo "<div class='input-box2'>    
+                <div class='inputBox ham2'> 
                 <select id='ham2' class='ham2' name='ham2' data-width='76' data-value='' >
-                <option value=''>Ha/M²</option>
+                <option value=''></option>
                 <option value='Ha'>Ha</option>
                 <option value='M²'>M²</option>
                 </select>
-                </div>";
+                <span>Ha/M²</span>
+                </div>
 
-                    echo "<div class='input-box2'>    
-                <label for='areaterreno'> Área Terreno: </label>
+                <div class='inputBox areaterren'>   
                     <input id='areaterreno' class='areaterreno' type='text' name='areaterreno' autocomplete='off'>
-                    </div>";
+                    <span>Área Terreno</span>
+                    </div>
 
-                    echo "<div class='input-box2'>   
-            <label for='areaconstruida'> Área Construída: </label>
+                <div class='inputBox areaconstruid'>
                 <input id='areaconstruida' class='areaconstruida' type='text' name='areaconstruida' autocomplete='off'>
-                    </div>";
+                <span>Área Construída</span>    
+                </div>
 
-                    echo "<div class='input-box'>  
-                <label for='valormercado'> Valor Mercado: </label>
+                <div class='inputBox valormercad'>
                     <input id='valormercado' class='valormercado' type='text' name='valormercado' onchange='calcularValorFração()'>
-                    </div>";
+                    <span>Valor Mercado</span> 
+                    </div>
 
-                    echo "<div class='input-box'>  
-                <label for='valormercadofracao'> Valor Mercado (Fração %): </label>
+                <div class='inputBox valormercadf'>
                     <input id='valormercadofracao' class='valormercadofracao' type='text' name='valormercadofracao' >
-                        </div>";
+                    <span>Valor (Fração)</span>     
+                    </div>
 
-                    echo "<div class='input-box'> 
-            <label for='origemvalor'> Origem do Valor: </label> 
+                <div class='inputBox origemvalor'>
                     <input id='origemvalor' class='origemvalor' type='text' name='origemvalor' autocomplete='off'>
+                    <span>Origem Valor</span>  
                     </div>";
 
                     echo "<div class='input-box'> 

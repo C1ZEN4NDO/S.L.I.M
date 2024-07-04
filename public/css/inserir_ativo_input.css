@@ -259,7 +259,7 @@
   width: 19.5%;
   height: 20px;
   margin-top: 0px;
-  margin-left: -0.5%;
+  margin-left: 0%;
 }
 
 .inputBox.docproprietario input:optional {
@@ -580,7 +580,7 @@
 /*Input Matricula*/
 .inputBox.matricula {
   position: relative;
-  width: 14.6%;
+  width: 15%;
   height: 20px;
   margin-top: 0px;
   margin-left: -1.6%;
@@ -649,7 +649,7 @@
   width: 12%;
   height: 20px;
   margin-top: 0px;
-  margin-left: -1.6%;
+  margin-left: 1.4%;
 }
 
 .inputBox.numcartorio select {
@@ -771,6 +771,661 @@
 .inputBox.cidcartorio input:valid,
 .inputBox.cidcartorio input:focus,
 .inputBox.cidcartorio input.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Input Endereco*/
+.inputBox.endereco {
+  position: relative;
+  width: 25%;
+  height: 20px;
+  margin-top: 0px;
+
+}
+
+.inputBox.endereco input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.endereco span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-43px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.endereco input:optional
+.inputBox.endereco input:valid~span,
+.inputBox.endereco input:focus~span,
+.inputBox.endereco input.has-value~span {
+  transform: translateX(52px) translateY(-59px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.endereco input:optional
+.inputBox.endereco input:valid,
+.inputBox.endereco input:focus,
+.inputBox.endereco input.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Input Cidade*/
+.inputBox.cidade {
+  position: relative;
+  width: 14.6%;
+  height: 20px;
+  margin-top: 0px;
+
+}
+
+.inputBox.cidade input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.cidade span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-43px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.cidade input:optional
+.inputBox.cidade input:valid~span,
+.inputBox.cidade input:focus~span,
+.inputBox.cidade input.has-value~span {
+  transform: translateX(52px) translateY(-59px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.cidade input:optional
+.inputBox.cidade input:valid,
+.inputBox.cidade input:focus,
+.inputBox.cidade input.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Select UF*/
+.inputBox.uf {
+  position: relative;
+  width: 8%;
+  height: 20px;
+  margin-top: 0px;
+}
+
+.inputBox.uf select {
+  width: 100%;
+  padding: 9.5px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.uf span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY( -3px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.uf select:optional
+.inputBox.uf select:valid~span,
+.inputBox.uf select:focus~span,
+.inputBox.uf select.has-value~span {
+  transform: translateX(120px) translateY(-18px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.uf select:optional
+.inputBox.uf select:valid,
+.inputBox.uf select:focus,
+.inputBox.uf select.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Select Região*/
+.inputBox.regiao {
+  position: relative;
+  width: 11%;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: -1.4%;
+}
+
+.inputBox.regiao select {
+  width: 100%;
+  padding: 9.5px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.regiao span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY( -3px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.regiao select:optional
+.inputBox.regiao select:valid~span,
+.inputBox.regiao select:focus~span,
+.inputBox.regiao select.has-value~span {
+  transform: translateX(120px) translateY(-18px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.regiao select:optional
+.inputBox.regiao select:valid,
+.inputBox.regiao select:focus,
+.inputBox.regiao select.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Select ham2*/
+.inputBox.ham2 {
+  position: relative;
+  width: 10%;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: -1.3%;
+}
+
+.inputBox.ham2 select {
+  width: 100%;
+  padding: 9.5px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.ham2 span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY( -3px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.ham2 select:optional
+.inputBox.ham2 select:valid~span,
+.inputBox.ham2 select:focus~span,
+.inputBox.ham2 select.has-value~span {
+  transform: translateX(120px) translateY(-18px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.ham2 select:optional
+.inputBox.ham2 select:valid,
+.inputBox.ham2 select:focus,
+.inputBox.ham2 select.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Input AreaTerreno*/
+.inputBox.areaterren {
+  position: relative;
+  width: 14.6%;
+  height: 20px;
+  margin-top: 0px;
+}
+
+.inputBox.areaterren input:optional {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.areaterren span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-43px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.areaterren input:optional
+.inputBox.areaterren input:valid~span,
+.inputBox.areaterren input:focus~span,
+.inputBox.areaterren input.has-value~span {
+  transform: translateX(52px) translateY(-59px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.areaterren input:optional
+.inputBox.areaterren input:valid,
+.inputBox.areaterren input:focus,
+.inputBox.areaterren input.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Input AreaConstruida*/
+.inputBox.areaconstruid {
+  position: relative;
+  width: 14.6%;
+  height: 20px;
+  margin-top: 0px;
+}
+
+.inputBox.areaconstruid input:optional {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.areaconstruid span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-43px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.areaconstruid input:optional
+.inputBox.areaconstruid input:valid~span,
+.inputBox.areaconstruid input:focus~span,
+.inputBox.areaconstruid input.has-value~span {
+  transform: translateX(52px) translateY(-59px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.areaconstruid input:optional
+.inputBox.areaconstruid input:valid,
+.inputBox.areaconstruid input:focus,
+.inputBox.areaconstruid input.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Input ValorMercado*/
+.inputBox.valormercad {
+  position: relative;
+  width: 14.6%;
+  height: 20px;
+  margin-top: 0px;
+}
+
+.inputBox.valormercad input:optional {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.valormercad span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-43px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.valormercad input:optional
+.inputBox.valormercad input:valid~span,
+.inputBox.valormercad input:focus~span,
+.inputBox.valormercad input.has-value~span {
+  transform: translateX(52px) translateY(-59px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.valormercad input:optional
+.inputBox.valormercad input:valid,
+.inputBox.valormercad input:focus,
+.inputBox.valormercad input.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Input ValorMercadoFracao*/
+.inputBox.valormercadf {
+  position: relative;
+  width: 14.6%;
+  height: 20px;
+  margin-top: 0px;
+}
+
+.inputBox.valormercadf input:optional {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.valormercadf span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-43px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.valormercadf input:optional
+.inputBox.valormercadf input:valid~span,
+.inputBox.valormercadf input:focus~span,
+.inputBox.valormercadf input.has-value~span {
+  transform: translateX(52px) translateY(-59px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.valormercadf input:optional
+.inputBox.valormercadf input:valid,
+.inputBox.valormercadf input:focus,
+.inputBox.valormercadf input.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+
+/*Input OrigemValor*/
+.inputBox.origemvalor {
+  position: relative;
+  width: 14.6%;
+  height: 20px;
+  margin-top: 0px;
+}
+
+.inputBox.origemvalor input:optional {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.origemvalor span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-43px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.origemvalor input:optional
+.inputBox.origemvalor input:valid~span,
+.inputBox.origemvalor input:focus~span,
+.inputBox.origemvalor input.has-value~span {
+  transform: translateX(52px) translateY(-59px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.origemvalor input:optional
+.inputBox.origemvalor input:valid,
+.inputBox.origemvalor input:focus,
+.inputBox.origemvalor input.has-value {
   border: 2px solid #000;
   border-radius: 3px;
 }

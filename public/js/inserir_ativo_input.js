@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var inputs = document.querySelectorAll('#docproprietario, #proprietarioimovel, #tipoimovel, #tipoativo, #subtipoativo, #tipologia, #matricula, #numcartorio');
+    var inputs = document.querySelectorAll('#docproprietario, #proprietarioimovel, #tipoimovel, #tipoativo, #subtipoativo, #tipologia, #matricula, #numcartorio, #cidcartorio, #endereco, #cidade, #uf, #regiao, #ham2, #area');
   
     inputs.forEach(function(input) {
         function checkValue() {
