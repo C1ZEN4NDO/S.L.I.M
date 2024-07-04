@@ -139,17 +139,18 @@ require_once '../config/conexao.php';
                     <span> % imóvel</span>
                     </div>
 
-                <div class='input-box2'>
+                <div class='inputBox tipoativo'>
                 <select id='tipoativo' class='tipoativo' name='tipoativo' data-width='76' data-value='' >
-                <option value=''>Tipo Ativo</option>
+                <option value=''></option>
                 <option value='Imóvel Urbano'>Imóvel Urbano</option>
                 <option value='Imóvel Rural'>Imóvel Rural</option>
                 </select>
-                </div>";
+                <span>Tipo Ativo</span>
+                </div>
 
-                    echo "<div class='input-box2'>
+                <div class='inputBox subtipoativo'>
                 <select id='subtipoativo' class='subtipoativo' name='subtipoativo' data-width='76' data-value='' >
-                <option value=''>Subtipo do Ativo</option>
+                <option value=''></option>
                 <option value='Apartamento Cobertura'>Apartamento Cobertura</option>
                 <option value='Apartamento Padrão'>Apartamento Padrão</option>
                 <option value='Barracão'>Barracão</option>
@@ -181,26 +182,27 @@ require_once '../config/conexao.php';
                 <option value='Sitio'>Sitio</option>
                 <option value='Silo'>Silo</option>
                 </select>
-                </div>";
+                <span>subtipo ativo</span>
+                </div>
 
-                    echo "<div class='input-box2'>
+                <div class='inputBox tipologia'>
                 <select id='tipologia' class='tipologia' name='tipologia' data-width='76' data-value='' >
-                <option value=''>Tipologia</option>
+                <option value=''></option>
                 <option value='Terreno'>Terreno</option>
                 <option value='Residência'>Residência</option>
                 <option value='Comércio'>Comércio</option>
                 </select>
-                </div>";
+                <span>Tipologia</span>
+                </div>
 
-
-                    echo "<div class='input-box2'>
-                <label for='matricula'> Matrícula: </label>
+                <div class='inputBox matricula'>
                     <input id='matricula' class='matricula' type='text' name='matricula' autocomplete='off' required>
-                    </div>";
+                    <span>Matrícula</span>
+                    </div>
 
-                    echo "<div class='input-box2'>
+                <div class='inputBox numcartorio'>
                 <select id='numcartorio' class='numcartorio' name='numcartorio' data-width='76' data-value='' required>
-                <option value=''>Número do Cartório</option>
+                <option value=''></option>
                 <option value='01º CARTÓRIO'>01º CARTÓRIO</option>
                 <option value='02º CARTÓRIO'>02º CARTÓRIO</option>
                 <option value='03º CARTÓRIO'>03º CARTÓRIO</option>
@@ -222,16 +224,17 @@ require_once '../config/conexao.php';
                 <option value='19º CARTÓRIO'>19º CARTÓRIO</option>
                 <option value='20º CARTÓRIO'>20º CARTÓRIO</option>
                 </select>
-                </div>";
+                <span>Cartório</span>
+                </div>
 
-                    echo "<div class='input-box'>
-                <label for='cidcartorio'> Cidade do Cartório: </label>
-                    <input id=cidcartorio class='cidcartorio' type='text' name='cidcartorio' placeholder='Sem Assentuação' autocomplete='off' required>
-                    </div>";
+                    <div class='inputBox cidcartorio'>
+                    <input id=cidcartorio class='cidcartorio' type='text' name='cidcartorio' autocomplete='off' required>
+                    <span>Cidade do Cartório</span>
+                    </div>
 
-                    echo "<div class='input-box'>
-                <label for='endereco'> Endereço: </label>
+                    <div class='inputBox endereco'>
                     <input id='endereco' class='endereco'type='text' name='endereco' autocomplete='off'>
+                    <span>Endereço</span>
                     </div>";
 
                     echo "<div class='input-box1'>

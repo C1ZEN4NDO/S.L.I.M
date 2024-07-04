@@ -1,9 +1,10 @@
 /*Input AlvoPesquisado*/
 .inputBox.alvopesquisado {
   position: relative;
-  width: 30%;
+  width: 28%;
   height: 20px;
   margin-top: 0px;
+  margin-left: -2.8%;
 }
 
 .inputBox.alvopesquisado input {
@@ -62,7 +63,7 @@
 /*ParteAlvo*/
 .inputBox.partealvo {
   position: relative;
-  width: 17%;
+  width: 18%;
   height: 20px;
   margin-top: 0px;
 }
@@ -123,13 +124,14 @@
 /*Select SelEstrategia*/
 .inputBox.selestrategia {
   position: relative;
-  width: 17%;
+  width: 18%;
   height: 20px;
   margin-top: 0px;
+  margin-left: -1.7%;
 }
 
 .inputBox.selestrategia select:optional {
-  width: 100%;
+  width: 80%;
   padding: 9.5px;
   outline: none;
   border: none;
@@ -188,9 +190,10 @@
 /*Input ProprietarioImóvel*/
 .inputBox.proprietarioimovel {
   position: relative;
-  width: 30%;
+  width: 28%;
   height: 20px;
   margin-top: 0px;
+  margin-left: -5%;
 }
 
 .inputBox.proprietarioimovel input {
@@ -253,9 +256,10 @@
 /*Input DocProprietario*/
 .inputBox.docproprietario {
   position: relative;
-  width: 17%;
+  width: 19.5%;
   height: 20px;
   margin-top: 0px;
+  margin-left: -0.5%;
 }
 
 .inputBox.docproprietario input:optional {
@@ -318,13 +322,13 @@
 /*Input PorcPropriedade*/
 .inputBox.porcpropriedade {
   position: relative;
-  width: 30%;
+  width: 10%;
   height: 20px;
   margin-top: 0px;
 }
 
 .inputBox.porcpropriedade input {
-  width: 25%;
+  width: 100%;
   padding: 10px;
   outline: none;
   border: none;
@@ -341,7 +345,7 @@
   margin-top: 5px;
   position: absolute;
   left: 0;
-  transform: translateY(-3px);
+  transform: translateY(-40px);
   margin-left: 5px;
   padding: 10px;
   pointer-events: none;
@@ -361,7 +365,7 @@
 
 .inputBox.porcpropriedade input:valid~span,
 .inputBox.porcpropriedade input:focus~span {
-  transform: translateX(35px) translateY(-16px);
+  transform: translateX(35px) translateY(-60px);
   font-size: 0.8em;
   padding: 5px 10px;
   background: #ffc800;
@@ -372,6 +376,401 @@
 
 .inputBox.porcpropriedade input:valid,
 .inputBox.porcpropriedade input:focus {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Select TipoAtivo*/
+.inputBox.tipoativo {
+  position: relative;
+  width: 12%;
+  height: 20px;
+  margin-top: 0px;
+}
+
+.inputBox.tipoativo select:optional {
+  width: 100%;
+  padding: 9.5px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.tipoativo span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY( -3px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.tipoativo select:optional
+.inputBox.tipoativo select:valid~span,
+.inputBox.tipoativo select:focus~span,
+.inputBox.tipoativo select.has-value~span {
+  transform: translateX(120px) translateY(-18px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.tipoativo select:optional
+.inputBox.tipoativo select:valid,
+.inputBox.tipoativo select:focus,
+.inputBox.tipoativo select.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Select SubtipoAtivo*/
+.inputBox.subtipoativo {
+  position: relative;
+  width: 17%;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: -1.6%;
+}
+
+.inputBox.subtipoativo select:optional {
+  width: 100%;
+  padding: 9.5px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.subtipoativo span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY( -3px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.subtipoativo select:optional
+.inputBox.subtipoativo select:valid~span,
+.inputBox.subtipoativo select:focus~span,
+.inputBox.subtipoativo select.has-value~span {
+  transform: translateX(120px) translateY(-18px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.subtipoativo select:optional
+.inputBox.subtipoativo select:valid,
+.inputBox.subtipoativo select:focus,
+.inputBox.subtipoativo select.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Select Tipologia*/
+.inputBox.tipologia {
+  position: relative;
+  width: 12%;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: -1.6%;
+}
+
+.inputBox.tipologia select:optional {
+  width: 100%;
+  padding: 9.5px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.tipologia span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY( -3px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.tipologia select:optional
+.inputBox.tipologia select:valid~span,
+.inputBox.tipologia select:focus~span,
+.inputBox.tipologia select.has-value~span {
+  transform: translateX(120px) translateY(-18px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.tipologia select:optional
+.inputBox.tipologia select:valid,
+.inputBox.tipologia select:focus,
+.inputBox.tipologia select.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Input Matricula*/
+.inputBox.matricula {
+  position: relative;
+  width: 14.6%;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: -1.6%;
+}
+
+.inputBox.matricula input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.matricula span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-43px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.matricula input:optional
+.inputBox.matricula input:valid~span,
+.inputBox.matricula input:focus~span,
+.inputBox.matricula input.has-value~span {
+  transform: translateX(52px) translateY(-59px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.matricula input:optional
+.inputBox.matricula input:valid,
+.inputBox.matricula input:focus,
+.inputBox.matricula input.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Select NumCartorio*/
+.inputBox.numcartorio {
+  position: relative;
+  width: 12%;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: -1.6%;
+}
+
+.inputBox.numcartorio select {
+  width: 100%;
+  padding: 9.5px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.numcartorio span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY( -3px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.numcartorio select:optional
+.inputBox.numcartorio select:valid~span,
+.inputBox.numcartorio select:focus~span,
+.inputBox.numcartorio select.has-value~span {
+  transform: translateX(120px) translateY(-18px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.numcartorio select:optional
+.inputBox.numcartorio select:valid,
+.inputBox.numcartorio select:focus,
+.inputBox.numcartorio select.has-value {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+/*Input CidCartorio*/
+.inputBox.cidcartorio {
+  position: relative;
+  width: 14.6%;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: -1.6%;
+}
+
+.inputBox.cidcartorio input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 3px;
+}
+
+.inputBox.cidcartorio span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-43px);
+  margin-left: 5px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight:600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.inputBox.cidcartorio input:optional
+.inputBox.cidcartorio input:valid~span,
+.inputBox.cidcartorio input:focus~span,
+.inputBox.cidcartorio input.has-value~span {
+  transform: translateX(52px) translateY(-59px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffc800;
+  letter-spacing: 0.2em;
+  color: #000;
+  border: 2px;
+}
+
+.inputBox.cidcartorio input:optional
+.inputBox.cidcartorio input:valid,
+.inputBox.cidcartorio input:focus,
+.inputBox.cidcartorio input.has-value {
   border: 2px solid #000;
   border-radius: 3px;
 }
